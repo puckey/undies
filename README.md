@@ -3,7 +3,7 @@ Undies
 
 A simple undo / redo history module for Javascript.
 
-Based on the Undo prototype in Mikko Mononen's [Stylii](https://github.com/memononen/stylii/blob/master/js/editor.js#L2)
+Based on the [Undo](https://github.com/memononen/stylii/blob/master/js/editor.js#L2) prototype in (Mikko Mononen)[https://github.com/memononen/]'s [Stylii](https://github.com/memononen/stylii/)
 
 Copyright (c) 2014 Moniker
 http://studiomoniker.com
