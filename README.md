@@ -53,7 +53,7 @@ text += 'c';
 number = 5;
 undies.snapshot();
 
-console.log('Text now contains:', text);
+console.log('Text now contains:', text); // abc
 console.log('Number now contains:', number); // 5
 
 console.log('Undo once');
