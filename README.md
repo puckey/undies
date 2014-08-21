@@ -11,8 +11,9 @@ http://studiomoniker.com
 ## Example
 
 ```javascript
-// Your data:
+// Your state:
 var text = '';
+var number;
 
 var undies = new Undies({
     // The maximum amount of undos:
@@ -20,48 +21,58 @@ var undies = new Undies({
 
     // Called whenever a snapshot is made in order to serialize your data:
     serialize: function() {
-        // Clone the current state of the text string:
-        return '' + text;
+        // Serialize the state:
+        return {
+            number: number,
+            text: '' + text
+        };
     },
 
     // Whenever undies.undo() or undies.redo() is called,
     // the restore function is called with the restored
     // data:
     restore: function(data) {
-        // Unserialize the data from the undo history and replace
-        // your your original data with it:
-        text = data;
+        // Restore the state:
+        text = '' + data.text;
+        number = data.number;
     }
 });
 
-console.log('Adding a to text');
+console.log('Adding a to text and changing number to 1');
 text += 'a';
-undies.snapshot('added A');
+number = 1;
+undies.snapshot();
 
-console.log('Adding b to text');
+console.log('Adding b to text and changing number to 3');
 text += 'b';
-undies.snapshot('added B');
+number = 3;
+undies.snapshot();
 
-console.log('Adding c to text');
+console.log('Adding c to text and changing number to 5');
 text += 'c';
-undies.snapshot('added C');
+number = 5;
+undies.snapshot();
 
 console.log('Text now contains:', text);
+console.log('Number now contains:', number); // 5
 
 console.log('Undo once');
 undies.undo();
 
 console.log('Text now contains:', text); // ab
+console.log('Number now contains:', number); // 3
 
 console.log('Undo once');
 undies.undo();
 
 console.log('Text now contains:', text); // a
+console.log('Number now contains:', number); // 1
 
 console.log('Redo once');
 undies.redo();
 
 console.log('Text now contains:', text); // ab
+console.log('Number now contains:', number); // 3
 
 ```
 
