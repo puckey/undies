@@ -1,0 +1,24 @@
+{
+  "name": "undies",
+  "version": "0.1.0",
+  "description": "A simple undo / redo history module for Javascript.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/studiomoniker/undies"
+  },
+  "contributors": [
+    "Jonathan Puckey <jonathan@studiomoniker.com> (http://studiomoniker.com)",
+    "Mikko Mononen (http://digestingduck.blogspot.com)"
+  ],
+  "main": "Undies.js",
+  "dependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "keywords": [
+    "undo",
+    "redo",
+    "history"
+  ]
+}
