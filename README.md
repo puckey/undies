@@ -12,9 +12,7 @@ http://studiomoniker.com
 
 The recommended way to install Undies is through Bower for browsers, and through NPM for Node.js:
 
-```
-bower install undies
-```
+    npm install undies
 
 With Bower installed, simply type this command in your project folder:
 
