@@ -8,6 +8,20 @@ Based on the [Undo](https://github.com/memononen/stylii/blob/master/js/editor.js
 Copyright (c) 2014 Moniker
 http://studiomoniker.com
 
+## Installing Undies
+
+The recommended way to install Undies is through Bower for browsers, and through NPM for Node.js:
+
+```
+bower install undies
+```
+
+With Bower installed, simply type this command in your project folder:
+
+    bower install undies
+
+Upon execution, you will find a `undies` folder inside the project's `bower_components` folder.
+
 ## Example
 
 ```javascript
