@@ -1,6 +1,6 @@
 {
   "name": "undies",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple undo / redo history module for Javascript.",
   "license": "MIT",
   "repository": {
