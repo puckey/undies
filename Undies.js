@@ -35,24 +35,36 @@
 				this.states.shift();
 
 			this.head = this.states.length - 1;
+			if (this.onStateChange)
+				this.onStateChange();
 		},
 
 		getState: function() {
 			return this.states[this.head];
 		},
 
+		getRedoState: function() {
+			if (!this.canRedo())
+				return;
+			return this.states[this.head + 1];
+		},
+
 		undo: function() {
-			if (this.head < 1)
+			if (!this.canUndo())
 				return;
 			this.head--;
 			this.restore(this.getState().data);
+			if (this.onStateChange)
+				this.onStateChange();
 		},
 
 		redo: function() {
-			if (this.head == this.states.length - 1)
+			if (!this.canRedo())
 				return;
 			this.head++;
 			this.restore(this.getState().data);
+			if (this.onStateChange)
+				this.onStateChange();
 		},
 
 		reset: function() {
